@@ -1,7 +1,7 @@
 import React from 'react';
 import { ExternalLink, Github, Smartphone, Database, Palette, ChevronRight } from 'lucide-react';
 import ecosnapImg from '../assets/ecosnap.png';
-import PennypilotImg from '../assets/pennypilot.png';
+import PennypilotImg from '../assets/PennyPilot.png';
 
 const Projects = () => {
   const projects = [

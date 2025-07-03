@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Github, Linkedin } from 'lucide-react';
 import profilePic from '../assets/profile.jpg';
 
 const About = () => {
@@ -13,7 +12,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-br from-[#080014] via-[#12022d] to-[#0a001d] relative overflow-hidden"
+      className="py-16 sm:py-20 bg-gradient-to-br from-[#080014] via-[#12022d] to-[#0a001d] relative overflow-hidden"
     >
       {/* Glowing backdrop */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-700/20 via-transparent to-transparent"></div>
@@ -24,60 +23,54 @@ const About = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-14"
+          className="text-center mb-10 sm:mb-14"
         >
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-fuchsia-500 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-fuchsia-500 via-purple-400 to-blue-400 bg-clip-text text-transparent">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-fuchsia-500 via-purple-400 to-blue-400 mx-auto rounded-full"></div>
+          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-fuchsia-500 via-purple-400 to-blue-400 mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Bio */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-br from-purple-600/10 via-pink-500/10 to-blue-500/10 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/20 shadow-lg">
+            <div className="bg-gradient-to-br from-purple-600/10 via-pink-500/10 to-blue-500/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-purple-400/20 shadow-lg">
               <motion.h3
-  className="text-4xl font-bold mb-4 bg-gradient-to-r from-fuchsia-400 to-blue-400 bg-clip-text text-transparent"
-  initial={{ opacity: 0, y: 20 }}
-  animate={inView ? { opacity: 1, y: 0 } : {}}
-  transition={{ duration: 0.6, delay: 0.4 }}
->
-  Hi, I am Preetham Bhat
-</motion.h3>
-
-<motion.p
-  className="text-lg font-normal mb-6 text-purple-300"
-  initial={{ opacity: 0, y: 20 }}
-  animate={inView ? { opacity: 1, y: 0 } : {}}
-  transition={{ duration: 0.6, delay: 0.5 }}
->
-  Final year Information Science Engineering student.
-</motion.p>
-
-
-              
+                className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-fuchsia-400 to-blue-400 bg-clip-text text-transparent"
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                Hi, I am Preetham Bhat
+              </motion.h3>
 
               <motion.p
-                className="text-gray-400 mb-6 leading-relaxed text-lg"
+                className="text-base sm:text-lg font-normal mb-4 sm:mb-6 text-purple-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                Final year Information Science Engineering student.
+              </motion.p>
+
+              <motion.p
+                className="text-gray-400 mb-5 sm:mb-6 leading-relaxed text-base sm:text-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
                 I craft immersive web applications with deep expertise in both frontend and backend development, leveraging React, Node.js, and JSX to deliver sleek, high-performance experiences. Passionate about clean architecture and elegant design, I consistently explore new technologies, contribute to open-source, and push the boundaries of what's possible on the web.
-
               </motion.p>
 
-              
-
-              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
                 {['Full-stack Web', 'Java'].map((tech, idx) => (
                   <motion.span
                     key={tech}
-                    className="px-4 py-1.5 bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-200 rounded-full text-lg font-bold border border-purple-400/20 backdrop-blur-sm"
+                    className="px-4 py-1.5 bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-200 rounded-full text-sm sm:text-lg font-bold border border-purple-400/20 backdrop-blur-sm"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.8 + idx * 0.1 }}
@@ -92,24 +85,23 @@ const About = () => {
 
           {/* Image */}
           <motion.div
-  initial={{ opacity: 0, x: 50 }}
-  animate={inView ? { opacity: 1, x: 0 } : {}}
-  transition={{ duration: 0.8, delay: 0.4 }}
-  className="flex justify-center lg:justify-end"
->
-  <div className="relative group w-[350px] h-[400px] rounded-3xl bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 p-1 shadow-2xl">
-    <div className="w-full h-full rounded-3xl bg-[#0a001d] overflow-hidden">
-      <img
-        src={profilePic}
-        alt="Profile"
-        className="w-full h-full object-cover"
-      />
-    </div>
-    {/* Glow */}
-    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-fuchsia-500/20 via-pink-500/20 to-blue-500/20 blur-2xl -z-10 group-hover:blur-3xl transition duration-500"></div>
-  </div>
-</motion.div>
-
+            initial={{ opacity: 0, x: 50 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex justify-center lg:justify-end"
+          >
+            <div className="relative group w-[280px] sm:w-[350px] h-[350px] sm:h-[400px] rounded-3xl bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 p-1 shadow-2xl">
+              <div className="w-full h-full rounded-3xl bg-[#0a001d] overflow-hidden">
+                <img
+                  src={profilePic}
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Glow */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-fuchsia-500/20 via-pink-500/20 to-blue-500/20 blur-2xl -z-10 group-hover:blur-3xl transition duration-500"></div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
