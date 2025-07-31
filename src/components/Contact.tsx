@@ -99,48 +99,54 @@ const Contact = () => {
 
   return (
     <>
-      <section id="contact" className="min-h-screen py-20 bg-[#0D011F] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#D17BFF]/10 via-[#A179FF]/10 to-transparent" />
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D17BFF]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#A179FF]/10 rounded-full blur-3xl" />
+      <section
+        id="contact"
+        className="min-h-screen py-20 bg-gradient-to-b from-[#0a0f1a] via-[#111a2c] to-[#162033] relative overflow-hidden"
+      >
+        {/* Decorative blurred glows */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#4b5b77]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#2d3b52]/20 rounded-full blur-3xl" />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D17BFF]/10 border border-[#D17BFF]/20 mb-6">
-              <MessageCircle className="w-4 h-4 text-[#D17BFF]" />
-              <span className="text-[#D17BFF] text-sm font-medium">Let's Connect</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1c2538]/60 border border-[#2d3b52] mb-6">
+              <MessageCircle className="w-4 h-4 text-gray-300" />
+              <span className="text-gray-300 text-sm font-medium">Let's Connect</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#D17BFF] via-[#A179FF] to-[#D17BFF] bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 bg-clip-text text-transparent">
               Get In Touch
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-[#D17BFF] via-[#A179FF] to-[#D17BFF] mx-auto rounded-full mb-6" />
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+            <div className="w-24 h-1 bg-gradient-to-r from-gray-500 to-white mx-auto rounded-full" />
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
               Ready to start your next project? Let's work together to create something amazing that makes a difference.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-10">
+            {/* Contact Info */}
             <div className="space-y-6">
               {contactInfo.map((info, idx) => (
                 <a
                   key={idx}
                   href={info.link}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-slate-800/30 border border-white/10 hover:border-[#D17BFF]/30 hover:bg-slate-800/50 transition-all duration-300"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#1c2538]/60 border border-[#2d3b52] hover:border-[#4b5b77] hover:bg-[#1c2538]/80 transition-all duration-300"
                 >
-                  <div className="p-3 rounded-xl bg-[#D17BFF]/10 border border-white/10 text-white">
+                  <div className="p-3 rounded-xl bg-[#2d3b52]/40 border border-[#2d3b52] text-gray-200">
                     {info.icon}
                   </div>
                   <div>
-                    <p className="font-semibold text-white">{info.title}</p>
+                    <p className="font-semibold text-gray-200">{info.title}</p>
                     <p className="text-sm text-gray-400">{info.content}</p>
                   </div>
                 </a>
               ))}
             </div>
 
-            <div className="bg-gradient-to-br from-[#14052D] to-[#2B0D5C] rounded-3xl p-8 border border-white/10 backdrop-blur-sm">
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span className="w-2 h-2 bg-[#D17BFF] rounded-full" />
+            {/* Contact Form */}
+            <div className="bg-[#1c2538] rounded-3xl p-8 border border-[#2d3b52] backdrop-blur-sm shadow-lg shadow-[#4b5b77]/10">
+              <h3 className="text-2xl font-bold text-gray-200 mb-6 flex items-center gap-3">
+                <span className="w-2 h-2 bg-[#4b5b77] rounded-full" />
                 Send Message
               </h3>
 
@@ -158,7 +164,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="Your Name"
-                      className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#D17BFF]/50 focus:ring-2 focus:ring-[#D17BFF]/20"
+                      className="w-full px-4 py-3 bg-[#2d3b52]/40 border border-[#2d3b52] rounded-xl text-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#4b5b77] focus:ring-2 focus:ring-[#4b5b77]/30"
                     />
                   </div>
                   <div>
@@ -173,7 +179,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="your.email@example.com"
-                      className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#D17BFF]/50 focus:ring-2 focus:ring-[#D17BFF]/20"
+                      className="w-full px-4 py-3 bg-[#2d3b52]/40 border border-[#2d3b52] rounded-xl text-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#4b5b77] focus:ring-2 focus:ring-[#4b5b77]/30"
                     />
                   </div>
                 </div>
@@ -190,7 +196,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     placeholder="Project Discussion"
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#D17BFF]/50 focus:ring-2 focus:ring-[#D17BFF]/20"
+                    className="w-full px-4 py-3 bg-[#2d3b52]/40 border border-[#2d3b52] rounded-xl text-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#4b5b77] focus:ring-2 focus:ring-[#4b5b77]/30"
                   />
                 </div>
 
@@ -206,14 +212,14 @@ const Contact = () => {
                     required
                     rows={6}
                     placeholder="Tell me about your project ideas, requirements, or just say hello..."
-                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#D17BFF]/50 focus:ring-2 focus:ring-[#D17BFF]/20 resize-none"
+                    className="w-full px-4 py-3 bg-[#2d3b52]/40 border border-[#2d3b52] rounded-xl text-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#4b5b77] focus:ring-2 focus:ring-[#4b5b77]/30 resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-[#D17BFF] to-[#A179FF] text-white py-4 px-6 rounded-xl font-semibold hover:from-[#D17BFF]/90 hover:to-[#A179FF]/90 transition-all duration-300 flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 active:scale-95"
+                  className="w-full bg-gradient-to-r from-[#2d3b52] to-[#4b5b77] text-gray-100 py-4 px-6 rounded-xl font-semibold hover:from-[#2d3b52]/90 hover:to-[#4b5b77]/90 transition-all duration-300 flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 active:scale-95"
                 >
                   {isSubmitting ? (
                     <>
@@ -257,16 +263,16 @@ const Contact = () => {
         </AnimatePresence>
       </section>
 
-      <footer className="w-full pt-8 border-t border-white/10 text-center bg-[#0D011F] relative z-10">
+      <footer className="w-full pt-8 border-t border-[#2d3b52] text-center bg-[#0a0f1a] relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-6">
             <p className="text-gray-400 text-lg">
               &copy; {new Date().getFullYear()} Preetham Bhat. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-gray-400">
-              <a href="/privacy-policy" className="hover:text-[#D17BFF] transition-colors duration-300">Privacy Policy</a>
-              <a href="/terms-of-service" className="hover:text-[#D17BFF] transition-colors duration-300">Terms of Service</a>
-              <a href="/sitemap" className="hover:text-[#D17BFF] transition-colors duration-300">Sitemap</a>
+              <a href="/privacy-policy" className="hover:text-[#4b5b77] transition-colors duration-300">Privacy Policy</a>
+              <a href="/terms-of-service" className="hover:text-[#4b5b77] transition-colors duration-300">Terms of Service</a>
+              <a href="/sitemap" className="hover:text-[#4b5b77] transition-colors duration-300">Sitemap</a>
             </div>
           </div>
         </div>

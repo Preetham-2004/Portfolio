@@ -12,11 +12,8 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-16 sm:py-20 bg-gradient-to-br from-[#080014] via-[#12022d] to-[#0a001d] relative overflow-hidden"
+      className="py-16 sm:py-20 bg-gradient-to-b from-black via-slate-900 to-slate-800 text-white relative overflow-hidden"
     >
-      {/* Glowing backdrop */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-700/20 via-transparent to-transparent"></div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           ref={ref}
@@ -25,22 +22,22 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-fuchsia-500 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
             About Me
           </h2>
-          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-fuchsia-500 via-purple-400 to-blue-400 mx-auto rounded-full"></div>
+          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-white via-gray-400 to-white mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          {/* Bio */}
+          {/* Bio Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-br from-purple-600/10 via-pink-500/10 to-blue-500/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-purple-400/20 shadow-lg">
+            <div className="bg-slate-800/70 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white/10 shadow-lg">
               <motion.h3
-                className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-fuchsia-400 to-blue-400 bg-clip-text text-transparent"
+                className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4 text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -49,7 +46,7 @@ const About = () => {
               </motion.h3>
 
               <motion.p
-                className="text-base sm:text-lg font-normal mb-4 sm:mb-6 text-purple-300"
+                className="text-base sm:text-lg font-normal mb-4 sm:mb-6 text-gray-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -58,7 +55,7 @@ const About = () => {
               </motion.p>
 
               <motion.p
-                className="text-gray-400 mb-5 sm:mb-6 leading-relaxed text-base sm:text-lg"
+                className="text-gray-300 mb-5 sm:mb-6 leading-relaxed text-base sm:text-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -70,7 +67,7 @@ const About = () => {
                 {['Full-stack Web', 'Java'].map((tech, idx) => (
                   <motion.span
                     key={tech}
-                    className="px-4 py-1.5 bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-purple-200 rounded-full text-sm sm:text-lg font-bold border border-purple-400/20 backdrop-blur-sm"
+                    className="px-4 py-1.5 bg-slate-700 text-white rounded-full text-sm sm:text-base font-semibold border border-white/20"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.8 + idx * 0.1 }}
@@ -90,16 +87,15 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative group w-[280px] sm:w-[350px] h-[350px] sm:h-[400px] rounded-3xl bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 p-1 shadow-2xl">
-              <div className="w-full h-full rounded-3xl bg-[#0a001d] overflow-hidden">
+            <div className="relative group w-[280px] sm:w-[350px] h-[350px] sm:h-[400px] rounded-3xl bg-gradient-to-br from-slate-500 via-slate-300 to-white p-1 shadow-2xl">
+              <div className="w-full h-full rounded-3xl bg-slate-950 overflow-hidden">
                 <img
                   src={profilePic}
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Glow */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-fuchsia-500/20 via-pink-500/20 to-blue-500/20 blur-2xl -z-10 group-hover:blur-3xl transition duration-500"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-slate-300/10 to-gray-100/10 blur-2xl -z-10 group-hover:blur-3xl transition duration-500"></div>
             </div>
           </motion.div>
         </div>

@@ -13,7 +13,6 @@ const Skills = () => {
         { name: "Tailwind CSS", level: 92 },
         { name: "GSAP", level: 80 },
         { name: "ThreeJS", level: 40 },
-        
       ]
     },
     {
@@ -41,11 +40,11 @@ const Skills = () => {
       ]
     },
     {
-      title: "Core programming",
+      title: "Core Programming",
       icon: <Brain className="w-6 h-6" />,
       skills: [
-        { name: "Data Structures & Algorithms", level: 40 },
-        { name: "System Dssign", level: 30 },
+        { name: "DSA", level: 40 },
+        { name: "System Design", level: 30 },
         { name: "Java", level: 60 },
         { name: "OOPS", level: 90 },
       ]
@@ -54,87 +53,90 @@ const Skills = () => {
 
   const additionalSkills = [
     'Redux', 'Socket.io', 'Prisma', 'Radix UI', 'Vite',
-    'Firebase','Framer Motion', 'Three.js', 'ShadCN',
-    'LangChain.js','NextAuth','Bun'
-    
+    'Firebase', 'Framer Motion', 'Three.js', 'ShadCN',
+    'LangChain.js', 'NextAuth', 'Bun'
   ];
 
-  const scrollingSkills = [...additionalSkills, ...additionalSkills, ...additionalSkills];
+  const scrollingSkills = [...additionalSkills, ...additionalSkills];
 
   return (
-    <section id="skills" className="min-h-screen py-20 bg-[#0D011F] relative overflow-hidden">
-      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-[#D17BFF]/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-[#A179FF]/10 rounded-full blur-3xl"></div>
-
+    <section
+      id="skills"
+      className="min-h-screen py-20 bg-gradient-to-b from-[#0a0f1a] via-[#111a2c] to-[#162033] overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D17BFF]/10 border border-[#D17BFF]/20 mb-6">
-            <Sparkles className="w-4 h-4 text-[#D17BFF]" />
-            <span className="text-[#D17BFF] text-sm font-medium">Technical Expertise</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1c2538]/60 border border-[#2d3b52] mb-6">
+            <Sparkles className="w-4 h-4 text-gray-300" />
+            <span className="text-gray-300 text-sm font-medium">Technical Expertise</span>
           </div>
-
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#D17BFF] to-[#A179FF]">
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
             Skills & Technologies
           </h2>
-
-          <div className="w-32 h-1 bg-gradient-to-r from-[#D17BFF] to-[#A179FF] mx-auto rounded-full mb-6"></div>
-
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+          <div className="w-24 h-1 bg-gradient-to-r from-gray-500 to-white mx-auto rounded-full"></div>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
             Mastering cutting-edge technologies to build exceptional digital experiences that push boundaries.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
-          {skillCategories.map((category, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-[#1C0E3A] to-[#2D1B55] p-6 rounded-3xl border border-[#D17BFF]/20 shadow-xl hover:shadow-purple-700/40 transition duration-300 relative overflow-hidden"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-[#D17BFF]/20 text-[#D17BFF] rounded-xl">
-                  {category.icon}
+        {/* Skill Containers */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-16">
+          {skillCategories.map((category, index) => {
+            const sortedSkills = [...category.skills].sort((a, b) => b.level - a.level);
+            return (
+              <div
+                key={index}
+                className="bg-[#1c2538] border border-[#2d3b52] hover:border-[#4b5b77]
+                           rounded-xl p-4 shadow-md hover:shadow-[#4b5b77]/20 
+                           transition-all duration-300 flex flex-col items-center"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-[#2d3b52]/50 text-gray-300 rounded-xl">
+                    {category.icon}
+                  </div>
+                  <h3 className="text-gray-200 text-base font-semibold text-center">{category.title}</h3>
                 </div>
-                <h3 className="text-white text-lg font-semibold">{category.title}</h3>
+
+                <div className="flex flex-col items-center">
+                  {sortedSkills.map((skill, i) => (
+                    <React.Fragment key={i}>
+                      <div className="w-44 px-3 py-1.5 bg-[#2d3b52]/40 border border-[#2d3b52] text-gray-200 rounded-md shadow-sm flex justify-between items-center">
+                        <span className="text-sm">{skill.name}</span>
+                        <span className="text-xs text-gray-400">{skill.level}%</span>
+                      </div>
+                      {i !== sortedSkills.length - 1 && (
+                        <div className="h-3 w-1 bg-[#2d3b52]/40 my-1"></div>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
               </div>
-              <ul className="space-y-4">
-                {category.skills.map((skill, i) => (
-                  <li key={i} className="flex flex-col">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm text-white">{skill.name}</span>
-                      <span className="text-sm text-[#D17BFF] font-semibold">{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-[#32284A] rounded-full">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-[#D17BFF] to-[#A179FF]"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        <div className="text-center mt-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#A179FF]/10 border border-[#A179FF]/20 mb-4">
-            <Zap className="w-4 h-4 text-[#A179FF]" />
-            <span className="text-[#A179FF] text-sm font-medium">Additional Technologies</span>
+        {/* Additional Skills Scroller */}
+        <div className="text-center mt-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1c2538]/60 border border-[#2d3b52] mb-4">
+            <Zap className="w-4 h-4 text-gray-300" />
+            <span className="text-gray-300 text-sm font-medium">Additional Technologies</span>
           </div>
-          <h3 className="text-3xl font-bold text-white mb-4">Expanding Horizons</h3>
+          <h3 className="text-3xl font-bold text-gray-200 mb-4">Expanding Horizons</h3>
           <p className="text-gray-400 max-w-xl mx-auto mb-8">
             Continuously learning and exploring new technologies to stay at the forefront of development.
           </p>
 
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0D011F] via-[#1E0D42]/50 to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0D011F] via-[#1E0D42]/50 to-transparent z-10"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0a0f1a] via-[#111a2c]/60 to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0a0f1a] via-[#111a2c]/60 to-transparent z-10"></div>
 
             <div className="whitespace-nowrap flex gap-4 animate-scroll">
               {scrollingSkills.map((tech, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 px-6 py-2 rounded-xl text-sm text-[#D17BFF] border border-[#D17BFF]/20 bg-[#1E1A2F]/60 backdrop-blur-md hover:bg-[#D17BFF]/10 transition-all"
+                  className="flex-shrink-0 px-6 py-2 rounded-xl text-sm text-gray-200 border border-[#2d3b52] bg-[#1c2538]/60 hover:bg-[#2d3b52]/50 transition-all"
                 >
                   {tech}
                 </div>
@@ -144,6 +146,7 @@ const Skills = () => {
         </div>
       </div>
 
+      {/* Scrolling animation */}
       <style>{`
         @keyframes scroll {
           0% { transform: translateX(0); }
