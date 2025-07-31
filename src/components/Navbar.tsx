@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Download, Menu, X } from 'lucide-react';
+import resumePDF from '../assets/Resume.pdf'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,8 +33,8 @@ const Navbar = () => {
   // Resume download function
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/CV.pdf';
-    link.download = 'CV.pdf';
+    link.href = resumePDF; 
+    link.download = 'Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

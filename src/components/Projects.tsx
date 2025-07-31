@@ -59,7 +59,7 @@ const Projects = () => {
       image: newImg,
       technologies: ['Node', 'Express', 'React+Vite', 'Gemini AI'],
       category: 'mobile',
-      githubUrl: 'https://github.com/Preetham-2004/match-alert-microservices',
+      githubUrl: 'https://github.com/Preetham-2004/CleanCode',
       demoUrl: 'https://cleancode-1-fi1m.onrender.com',
       featured: true,
       icon: <Smartphone className="w-5 h-5" />

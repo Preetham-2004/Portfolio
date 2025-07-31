@@ -28,12 +28,13 @@ const About = () => {
           <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-white via-gray-400 to-white mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          {/* Bio Section */}
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          {/* Bio Section - Made narrower to fit side by side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="md:w-1/2"
           >
             <div className="bg-slate-800/70 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white/10 shadow-lg">
               <motion.h3
@@ -80,12 +81,12 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Image */}
+          {/* Image - Made to appear side by side on medium screens and up */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-center lg:justify-end"
+            className="md:w-1/2 flex justify-center"
           >
             <div className="relative group w-[280px] sm:w-[350px] h-[350px] sm:h-[400px] rounded-3xl bg-gradient-to-br from-slate-500 via-slate-300 to-white p-1 shadow-2xl">
               <div className="w-full h-full rounded-3xl bg-slate-950 overflow-hidden">
