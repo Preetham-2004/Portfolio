@@ -79,7 +79,7 @@ const Projects = () => {
             <span className="text-sm font-medium text-gray-400">My Work</span>
           </div>
           <h2
-            className="text-5xl md:text-6xl font-bold mb-6 
+            className="text-5xl md:text-5xl font-bold mb-6 
                        bg-gradient-to-r from-gray-200 to-gray-400 
                        bg-clip-text text-transparent"
           >
@@ -154,22 +154,6 @@ const Projects = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* View All Projects Button */}
-        <div className="text-center mt-16">
-          <a
-            href="https://github.com/Preetham-2004?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-[#4b5b77]/70 text-white rounded-2xl hover:bg-[#5b6b88] transition-all duration-300 font-semibold text-lg group cursor-pointer"
-          >
-            <span>View All Projects</span>
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
-          <p className="text-gray-500 mt-4">
-            Want to see more? Check out my GitHub for additional projects and contributions.
-          </p>
         </div>
       </div>
     </section>

@@ -72,7 +72,7 @@ const Skills = () => {
             <Sparkles className="w-4 h-4 text-gray-300" />
             <span className="text-gray-300 text-sm font-medium">Technical Expertise</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
             Skills & Technologies
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-gray-500 to-white mx-auto rounded-full"></div>

@@ -13,6 +13,7 @@ import {
   XCircle,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Github, Linkedin } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -114,7 +115,7 @@ const Contact = () => {
               <MessageCircle className="w-4 h-4 text-gray-300" />
               <span className="text-gray-300 text-sm font-medium">Let's Connect</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 bg-clip-text text-transparent">
               Get In Touch
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-gray-500 to-white mx-auto rounded-full" />
@@ -263,20 +264,39 @@ const Contact = () => {
         </AnimatePresence>
       </section>
 
-      <footer className="w-full pt-8 border-t border-[#2d3b52] text-center bg-[#0a0f1a] relative z-10">
+      <footer className="w-full pt-2 border-t border-[#2d3b52] bg-gradient-to-r from-[#1c2538] via-[#162033] to-[#2d3b52] relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-6">
-            <p className="text-gray-400 text-lg">
-              &copy; {new Date().getFullYear()} Preetham Bhat. All rights reserved.
-            </p>
-            <div className="flex items-center gap-6 text-gray-400">
-              <a href="/privacy-policy" className="hover:text-[#4b5b77] transition-colors duration-300">Privacy Policy</a>
-              <a href="/terms-of-service" className="hover:text-[#4b5b77] transition-colors duration-300">Terms of Service</a>
-              <a href="/sitemap" className="hover:text-[#4b5b77] transition-colors duration-300">Sitemap</a>
-            </div>
+          <div className="flex flex-col items-center justify-center gap-3 py-6">
+        <h2 className="text-2xl font-bold text-transparent bg-gradient-to-r from-[#e3e9f2] via-white-200 to-[#aeb2b8] bg-clip-text mb-1 tracking-wide">
+          Preetham Bhat
+        </h2>
+        <div className="flex items-center gap-6">
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-[#2d3b52]/60 hover:bg-[#4b5b77]/80 transition-all duration-300 shadow-lg hover:scale-110"
+            aria-label="GitHub"
+          >
+            <Github size={18} className="text-gray-200" />
+          </a>
+          <a
+            href="https://linkedin.com/in/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-[#2d3b52]/60 hover:bg-[#4b5b77]/80 transition-all duration-300 shadow-lg hover:scale-110"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={18} className="text-gray-200" />
+          </a>
+        </div>
+        <p className="text-gray-400 text-xs mt-2">
+          &copy; {new Date().getFullYear()} <span className="font-semibold text-gray-300">Preetham Bhat</span>. All rights reserved.
+        </p>
           </div>
         </div>
       </footer>
+
     </>
   );
 };
