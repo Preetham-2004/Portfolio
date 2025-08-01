@@ -272,7 +272,7 @@ const Contact = () => {
         </h2>
         <div className="flex items-center gap-6">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Preetham-2004"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full bg-[#2d3b52]/60 hover:bg-[#4b5b77]/80 transition-all duration-300 shadow-lg hover:scale-110"
@@ -281,7 +281,7 @@ const Contact = () => {
             <Github size={18} className="text-gray-200" />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/preetham-bhat-p1104"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full bg-[#2d3b52]/60 hover:bg-[#4b5b77]/80 transition-all duration-300 shadow-lg hover:scale-110"
