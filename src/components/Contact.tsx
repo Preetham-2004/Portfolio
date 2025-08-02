@@ -264,38 +264,39 @@ const Contact = () => {
         </AnimatePresence>
       </section>
 
-      <footer className="w-full pt-2 border-t border-[#2d3b52] bg-gradient-to-r from-[#1c2538] via-[#162033] to-[#2d3b52] relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-center gap-3 py-6">
-        <h2 className="text-2xl font-bold text-transparent bg-gradient-to-r from-[#e3e9f2] via-white-200 to-[#aeb2b8] bg-clip-text mb-1 tracking-wide">
-          Preetham Bhat
-        </h2>
-        <div className="flex items-center gap-6">
-          <a
-            href="https://github.com/Preetham-2004"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-full bg-[#2d3b52]/60 hover:bg-[#4b5b77]/80 transition-all duration-300 shadow-lg hover:scale-110"
-            aria-label="GitHub"
-          >
-            <Github size={18} className="text-gray-200" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/preetham-bhat-p1104"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-full bg-[#2d3b52]/60 hover:bg-[#4b5b77]/80 transition-all duration-300 shadow-lg hover:scale-110"
-            aria-label="LinkedIn"
-          >
-            <Linkedin size={18} className="text-gray-200" />
-          </a>
-        </div>
-        <p className="text-gray-400 text-xs mt-2">
-          &copy; {new Date().getFullYear()} <span className="font-semibold text-gray-300">Preetham Bhat</span>. All rights reserved.
-        </p>
-          </div>
-        </div>
-      </footer>
+      <footer className="w-full pt-1 border-t border-[#2d3b52] bg-gradient-to-r from-[#1c2538] via-[#162033] to-[#2d3b52] relative z-10">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col items-center justify-center gap-2 py-3">
+      <h2 className="text-lg sm:text-xl font-bold text-transparent bg-gradient-to-r from-[#e3e9f2] via-white-200 to-[#aeb2b8] bg-clip-text mb-1 tracking-wide">
+        Preetham Bhat
+      </h2>
+      <div className="flex items-center gap-4">
+        <a
+          href="https://github.com/Preetham-2004"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full bg-[#2d3b52]/60 hover:bg-[#4b5b77]/80 transition-all duration-300 shadow-md hover:scale-110"
+          aria-label="GitHub"
+        >
+          <Github size={16} className="text-gray-200" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/preetham-bhat-p1104"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full bg-[#2d3b52]/60 hover:bg-[#4b5b77]/80 transition-all duration-300 shadow-md hover:scale-110"
+          aria-label="LinkedIn"
+        >
+          <Linkedin size={16} className="text-gray-200" />
+        </a>
+      </div>
+      <p className="text-gray-400 text-[10px] sm:text-xs mt-1 text-center px-2">
+        &copy; {new Date().getFullYear()} <span className="font-semibold text-gray-300">Preetham Bhat</span>. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
 
     </>
   );

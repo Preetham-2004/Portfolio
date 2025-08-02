@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen relative flex items-center justify-center overflow-hidden 
+      className="min-h-[60vh] sm:min-h-screen pt-12 sm:pt-28 relative flex items-center justify-center overflow-hidden 
                  bg-gradient-to-b from-[#0a0f1a] via-[#111a2c] to-[#162033]"
     >
       {/* Spline Background */}
@@ -55,7 +55,6 @@ const Hero = () => {
 
         <style>
           {`
-            /* Smooth flowing gradient animation */
             @keyframes gradientMove {
               0%   { background-position: 50% 0%; }
               25%  { background-position: 100% 50%; }

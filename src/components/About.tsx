@@ -1,9 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
 import profileVideo from '../assets/baki.1920x1080.mp4';
-
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -16,7 +14,6 @@ const About = () => {
       id="about"
       className="py-20 bg-gradient-to-b from-black via-slate-900 to-slate-800 text-white relative overflow-hidden"
     >
-      {/* Animated Background Gradient */}
       <style>
         {`
           @keyframes diagonal-gradient {
@@ -26,18 +23,17 @@ const About = () => {
           }
           .diagonal-gradient-anim {
             background: linear-gradient(
-  135deg,
-  #1a1a1a,
-  #2d2d2d,
-  #4a4a4a,
-  #6a6a6a,
-  #aaaaaa,
-  #6a6a6a,
-  #4a4a4a,
-  #2d2d2d,
-  #1a1a1a
-);
-
+              135deg,
+              #0f0f0f,
+              #1a1a1a,
+              #2f2f2f,
+              #4f4f4f,
+              #aaaaaa,
+              #4f4f4f,
+              #2f2f2f,
+              #1a1a1a,
+              #0f0f0f
+            );
             background-size: 200% 200%;
             animation: diagonal-gradient 20s ease infinite;
           }
@@ -46,8 +42,7 @@ const About = () => {
 
       <div className="absolute inset-0 w-full h-full z-0 diagonal-gradient-anim opacity-30"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Heading */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -61,66 +56,49 @@ const About = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-white via-gray-400 to-white mx-auto rounded-full" />
         </motion.div>
 
-        {/* Content */}
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-20">
-          {/* Text Content */}
+        {/* Responsive layout */}
+        <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-20">
+          {/* Text */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="md:w-3/5"
+            className="md:w-2/3 w-full"
           >
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-8 shadow-2xl">
-              <motion.h3
-                className="text-2xl sm:text-3xl font-semibold mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
+            <div className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-6 md:p-8 shadow-xl text-left">
+              <h3 className="text-lg md:text-2xl font-semibold mb-2 text-white">
                 Hi, I'm <span className="text-white">Preetham Bhat</span>
-              </motion.h3>
-
-              <motion.p
-                className="text-gray-300 text-base sm:text-lg mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
+              </h3>
+              <p className="text-gray-300 text-sm md:text-base mb-3">
                 Final-year Information Science Engineering student with a passion for full-stack development and clean design.
-              </motion.p>
-
-              <motion.p
-                className="text-gray-400 leading-relaxed text-sm sm:text-base"
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
+              </p>
+              <p className="text-gray-400 text-sm md:text-base leading-relaxed">
                 I build immersive web experiences using React, Node.js, and modern JavaScript. My focus is on clean architecture, performance, and beautiful UI. Whether it's crafting frontend interfaces or architecting scalable backends, I strive for simplicity and impact. I'm also deeply invested in continuous learning, contributing to open-source, and turning innovative ideas into real-world projects.
-              </motion.p>
+              </p>
             </div>
           </motion.div>
 
-          {/* Video Profile Section */}
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="md:w-2/5 flex justify-center"
-            >
-              <div className="relative group w-[240px] sm:w-[280px] h-[280px] sm:h-[320px] rounded-2xl bg-gradient-to-br from-gray-800 via-gray-300 to-white p-1 shadow-xl hover:scale-105 transition-transform duration-500 border border-gray-400/30 border-[1px]">
-              <div className="w-full h-full rounded-2xl bg-slate-900 overflow-hidden">
+          {/* Video */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-[170px] h-[170px] md:w-[300px] md:h-[300px] rounded-full relative"
+          >
+            <div className="w-full h-full rounded-full p-[4px] bg-gradient-to-br from-black via-white to-gray-400 shadow-lg">
+              <div className="rounded-full overflow-hidden w-full h-full bg-black">
                 <video
-                src={profileVideo}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover rounded-2xl"
+                  src={profileVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 via-slate-300/10 to-gray-100/10 blur-2xl -z-10 group-hover:blur-3xl transition duration-500" />
-              </div>
-            </motion.div>
+            </div>
+            <div className="absolute inset-0 rounded-full blur-3xl opacity-20 md:opacity-30 bg-gradient-to-br from-black via-white to-gray-400 -z-10" />
+          </motion.div>
         </div>
       </div>
     </section>
