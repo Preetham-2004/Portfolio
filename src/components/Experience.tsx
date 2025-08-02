@@ -39,7 +39,7 @@ const ScrollMarquee = ({ items }: { items: MarqueeItem[] }) => {
 
       if (delta !== 0) {
         direction.current = delta > 0 ? 1 : -1;
-        velocity.current = Math.min(Math.abs(delta) * 0.03, 0.3) * direction.current;
+        velocity.current = Math.min(Math.abs(delta) * 0.01, 0.1) * direction.current;
         lastScroll.current = currentY;
         lastUpdate.current = now;
       }

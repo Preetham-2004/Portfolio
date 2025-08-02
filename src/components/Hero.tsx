@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-[60vh] sm:min-h-screen pt-12 sm:pt-28 relative flex items-center justify-center overflow-hidden 
+      className="h-[85vh] sm:h-screen pt-16 sm:pt-28 relative flex items-center justify-center overflow-hidden 
                  bg-gradient-to-b from-[#0a0f1a] via-[#111a2c] to-[#162033]"
     >
       {/* Spline Background */}
@@ -22,12 +22,12 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
-            className="w-full h-full flex items-center justify-center"
+            className="absolute inset-0 w-full h-full flex items-center justify-center"
           >
             <div
-              className="filter brightness-125 saturate-150 opacity-80 transition-transform duration-700
-                         scale-[2.2] sm:scale-[1.8] md:scale-[1.5]
-                         translate-x-[35%] sm:translate-x-[30%] md:translate-x-[20%]"
+              className="absolute inset-0 w-full h-full scale-[2.6] sm:scale-[1.8] md:scale-[1.5]
+                         translate-x-[30%] sm:translate-x-[20%] md:translate-x-[10%]
+                         filter brightness-125 saturate-150 opacity-80 transition-transform duration-700"
             >
               <Spline scene="https://prod.spline.design/TNj1cKJWzN1C5brt/scene.splinecode" />
             </div>
@@ -39,7 +39,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[#0a0f1a]/60 backdrop-blur-sm" />
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto -mt-10">
         <motion.h1
           className="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-6
                      bg-gradient-to-r from-gray-200 via-gray-400 to-gray-300
