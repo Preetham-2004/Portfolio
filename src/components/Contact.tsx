@@ -47,7 +47,7 @@ const Contact = () => {
     try {
       if (formRef.current) {
         await emailjs.sendForm(
-          'service_xbsw35k',
+          'service_oyforgo',
           'template_5era6pj',
           formRef.current,
           'HWzPZCNenEGmss9kX'
