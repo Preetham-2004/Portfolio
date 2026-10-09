@@ -104,6 +104,6 @@ and can be compressed further in a future asset-only update.
 See [SECURITY.md](SECURITY.md) for the review scope, fixes, and remaining launch requirements.
 Tailwind 4 replaces the vulnerable Tailwind 3 build dependency chain; it requires
 modern browsers (Safari 16.4+, Chrome 111+, Firefox 128+).
-The build rejects undocumented `VITE_` variables to help prevent accidental
-client-side secret exposure. Only the four public contact configuration values
+The build ignores undocumented `VITE_` variables to help prevent accidental
+client-side secret exposure while allowing hosting metadata. Only the four public contact configuration values
 listed in `.env.example` are allowed.

@@ -12,13 +12,15 @@ const publicVariables = [
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "VITE_");
-  if (Object.keys(env).some((name) => !publicVariables.includes(name))) {
-    throw new Error(
-      "Unapproved VITE_ variable: only the documented public contact configuration may be exposed to the browser.",
-    );
-  }
   return {
-    envPrefix: publicVariables,
+    // Expose exact names only; hosting metadata and other variables stay private.
+    envPrefix: [],
+    define: Object.fromEntries(
+      publicVariables.map((name) => [
+        `import.meta.env.${name}`,
+        JSON.stringify(env[name] ?? ""),
+      ]),
+    ),
     plugins: [react()],
     optimizeDeps: {
       exclude: ["lucide-react"],

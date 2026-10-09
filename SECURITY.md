@@ -21,7 +21,8 @@ absence of vulnerabilities or a penetration test of deployed infrastructure.
 - Submit-time length validation complements HTML input limits. Whitespace,
   honeypot, and concurrent-send guards remain. These checks improve browser
   behavior; they cannot prevent callers from bypassing the browser entirely.
-- The build rejects undocumented `VITE_` variables. The four documented public
+- The build exposes only the four exact documented public variable names and
+  ignores other `VITE_` variables, including hosting metadata. The documented public
   values are intentionally visible to visitors. No private key belongs in them.
 - Vercel headers now include HSTS and prohibit base URL overrides. CSP allows only
   the required reCAPTCHA script/frame/connect paths alongside existing resources.
