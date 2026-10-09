@@ -10,6 +10,7 @@ export const Contact: React.FC = () => {
   const submitting = useRef(false);
   const [captchaToken, setCaptchaToken] = useState("");
   const [captchaAttempt, setCaptchaAttempt] = useState(0);
+  const [sendError, setSendError] = useState("");
   const captchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
   const emailConfigured = Boolean(
     import.meta.env.VITE_EMAILJS_SERVICE_ID &&
@@ -57,6 +58,7 @@ export const Contact: React.FC = () => {
     submitting.current = true;
 
     setStatus("sending");
+    setSendError("");
     try {
       const {
         VITE_EMAILJS_SERVICE_ID,
@@ -80,7 +82,24 @@ export const Contact: React.FC = () => {
       );
       setForm({ name: "", email: "", subject: "", message: "" });
       setStatus("success");
-    } catch {
+    } catch (error: unknown) {
+      const response = error as { status?: unknown; text?: unknown } | null;
+      const code = typeof response?.status === "number" ? response.status : 0;
+      const detail =
+        typeof response?.text === "string" ? response.text.toLowerCase() : "";
+      // Classify provider errors without displaying raw responses or submitted data.
+      const reason = /captcha/.test(detail)
+        ? "Verification was rejected. Complete a fresh CAPTCHA and try again."
+        : code === 429
+          ? "The email service is temporarily limiting requests. Please try later."
+          : /origin|domain|whitelist|allowlist/.test(detail)
+            ? "The email service has not authorized this website. Please contact me through the About section."
+            : /service|template|public key|user id|user_id/.test(detail)
+              ? "The email service configuration needs attention. Please contact me through the About section."
+              : code > 0
+                ? "The email service rejected the message. Please try later or use the About section to contact me."
+                : "Could not connect to the email service. Check your connection and try again.";
+      setSendError(`${reason}${code > 0 ? ` (Error ${code})` : ""}`);
       setStatus("error");
     } finally {
       submitting.current = false;
@@ -323,7 +342,7 @@ export const Contact: React.FC = () => {
                   ? "Message sent — I'll get back to you shortly."
                   : status === "sending"
                     ? "Sending your message…"
-                    : "Your message could not be sent. Please try again."}
+                    : sendError}
               </p>
             )}
             <label
